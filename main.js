@@ -1,17 +1,26 @@
-function myfunc(e) {
+function myfunc(event) {
    
-    const full_name= document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-     
-    const obj = {
-        full_name,
-        email
-    }
-    localStorage.setItem("userdetails", JSON.stringify(obj));
+    event.preventDefault();
+
+   const name= document.getElementById('name').value;
+   const email = document.getElementById('email').value;
     
-    localStorage.getItem('name', full_name);
-     localStorage.getItem('mail', email);
- 
- } 
- 
+   localStorage.setItem('name', name);
+   localStorage.setItem('mail', email);
+
+   const obj = {
+       name,
+       email
+   }
+
+   localStorage.setItem(obj.email, JSON.stringify(obj));
+   showuseronscreen(obj)
+} 
+
+function showuseronscreen(obj) {
+    const parentele = document.getElementById("listofitems")
+
+    parentele.innerHTML = parentele.innerHTML + '<li>${obj.name} - ${obj.email}</li>';
+}
+
  
