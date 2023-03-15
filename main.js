@@ -5,6 +5,6 @@ function myfunc(e) {
      localStorage.getItem('name', full_name);
      localStorage.getItem('mail', email);
  
- }
+ } 
  
  
