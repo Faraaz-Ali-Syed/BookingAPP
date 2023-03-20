@@ -33,8 +33,32 @@ function showuseronscreen(obj) {
         localStorage.removeItem(obj.email)
         parentele.removeChild(childele)
 
+
     }
+
+
+
+
+    const editbtn = document.createElement('input');
+    editbtn.type = "button";
+    editbtn.value = 'Edit';
+    editbtn.onclick = () => {
+
+        localStorage.removeItem(obj.email)
+        parentele.removeChild(childele)
+        document.getElementById('name').value = obj.name;
+        document.getElementById('email').value = obj.email;
+
+    }
+
+
+
+
+
+
+
     childele.appendChild(deletebtn)
+    childele.appendChild(editbtn)
     parentele.appendChild(childele)
 
 }
